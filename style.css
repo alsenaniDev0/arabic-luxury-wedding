@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Tahoma", "Arial", sans-serif;
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.18), transparent 35%),
+        linear-gradient(135deg, #3b2416, #7a4b2a, #d6a85f);
+    color: #fff;
+    overflow-x: hidden;
+}
+
+.wedding-page {
+    min-height: 100vh;
+    padding: 32px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.invite-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 42px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 248, 235, 0.95)),
+        url("https://www.transparenttextures.com/patterns/arabesque.png");
+
+    color: #3d2818;
+    border-radius: 32px;
+    border: 2px solid rgba(198, 145, 65, 0.8);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 8px rgba(255, 255, 255, 0.5);
+
+    animation: cardEnter 1.2s ease forwards;
+}
+
+.invite-card::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(180, 122, 37, 0.45);
+    border-radius: 24px;
+    pointer-events: none;
+}
+
+.invite-card::after {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -80%;
+    width: 70%;
+    height: 220%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+    transform: rotate(25deg);
+    animation: shine 5s ease-in-out infinite;
+}
+
+.top-ornament,
+.bottom-ornament {
+    font-size: 42px;
+    color: #b77b25;
+    animation: ornamentPulse 2.5s ease-in-out infinite;
+}
+
+.top-ornament {
+    margin-bottom: 10px;
+}
+
+.bottom-ornament {
+    margin-top: 20px;
+}
+
+.bismillah {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    color: #7a4b2a;
+    margin-bottom: 18px;
+    animation: fadeUp 1s ease forwards;
+}
+
+.rings {
+    font-size: 46px;
+    margin-bottom: 12px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.small-title {
+    color: #9b6a2d;
+    font-size: 16px;
+    margin-bottom: 8px;
+    animation: fadeUp 1s ease 0.2s forwards;
+    opacity: 0;
+}
+
+.main-title {
+    font-size: 46px;
+    color: #6b3f1f;
+    margin-bottom: 18px;
+    line-height: 1.2;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.8);
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+.message,
+.invite-text,
+.closing {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #5b3a22;
+}
+
+.message {
+    animation: fadeUp 1s ease 0.4s forwards;
+    opacity: 0;
+}
+
+.names {
+    margin: 22px 0;
+    padding: 24px 12px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+
+    color: #8a561f;
+    animation: fadeUp 1s ease 0.6s forwards;
+    opacity: 0;
+
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.names::before,
+.names::after {
+    content: "";
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    width: 170px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c69238, transparent);
+}
+
+.names::before {
+    top: 0;
+}
+
+.names::after {
+    bottom: 0;
+}
+
+.invite-text {
+    margin-bottom: 24px;
+    animation: fadeUp 1s ease 0.8s forwards;
+    opacity: 0;
+}
+
+.details {
+    display: grid;
+    gap: 14px;
+    margin: 28px 0;
+}
+
+.detail-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-align: right;
+
+    padding: 14px 16px;
+    border-radius: 18px;
+
+    background: rgba(255, 248, 235, 0.8);
+    border: 1px solid rgba(198, 145, 65, 0.35);
+
+    box-shadow: 0 8px 20px rgba(96, 58, 24, 0.08);
+
+    animation: fadeUp 1s ease forwards;
+    opacity: 0;
+}
+
+.detail-box:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.detail-box:nth-child(2) {
+    animation-delay: 1.15s;
+}
+
+.detail-box:nth-child(3) {
+    animation-delay: 1.3s;
+}
+
+.detail-box .icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #c69238, #f0d48a);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 20px;
+    box-shadow: 0 8px 18px rgba(198, 145, 65, 0.35);
+}
+
+.detail-box small {
+    display: block;
+    color: #9b6a2d;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.detail-box strong {
+    color: #4d2f1a;
+    font-size: 16px;
+}
+
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 4px;
+    padding: 13px 34px;
+
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+
+    border-radius: 999px;
+    background: linear-gradient(135deg, #8a561f, #c69238, #8a561f);
+    background-size: 200% 200%;
+
+    box-shadow: 0 14px 28px rgba(138, 86, 31, 0.35);
+
+    animation: buttonGradient 3s ease infinite, fadeUp 1s ease 1.45s forwards;
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 34px rgba(138, 86, 31, 0.45);
+}
+
+.closing {
+    margin-top: 22px;
+    color: #7a4b2a;
+    animation: fadeUp 1s ease 1.6s forwards;
+    opacity: 0;
+}
+
+.floating-shape {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.35), transparent 70%);
+    filter: blur(1px);
+    animation: backgroundFloat 8s ease-in-out infinite;
+}
+
+.shape-1 {
+    top: 12%;
+    right: 10%;
+}
+
+.shape-2 {
+    bottom: 14%;
+    left: 8%;
+    animation-delay: 1.5s;
+}
+
+.shape-3 {
+    top: 45%;
+    left: 18%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 3s;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(-4deg);
+    }
+}
+
+@keyframes ornamentPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes titleGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 0 rgba(198, 145, 65, 0);
+    }
+
+    50% {
+        text-shadow: 0 0 18px rgba(198, 145, 65, 0.35);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -90%;
+    }
+
+    45%,
+    100% {
+        left: 140%;
+    }
+}
+
+@keyframes buttonGradient {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes backgroundFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translateY(-24px) translateX(16px);
+        opacity: 0.9;
+    }
+}
+
+@media (max-width: 520px) {
+    .wedding-page {
+        padding: 20px 12px;
+    }
+
+    .invite-card {
+        padding: 34px 20px;
+        border-radius: 26px;
+    }
+
+    .main-title {
+        font-size: 38px;
+    }
+
+    .names {
+        font-size: 34px;
+    }
+
+    .message,
+    .invite-text,
+    .closing {
+        font-size: 16px;
+    }
+
+    .detail-box {
+        padding: 13px 14px;
+    }
+}

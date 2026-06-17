@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="wedding-page">
+
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+
+        <section class="invite-card">
+
+            <div class="top-ornament">❦</div>
+
+            <div class="rings">{{icon}}</div>
+
+            <p class="small-title">{{smallTitle}}</p>
+
+            <h1 class="main-title">{{title}}</h1>
+
+            <p class="message">
+                {{message}}
+            </p>
+
+            <div class="names">
+                {{names}}
+            </div>
+
+            <p class="invite-text">
+                {{inviteText}}
+            </p>
+
+            <div class="details">
+
+                <div class="detail-box">
+                    <span class="icon">📅</span>
+                    <div>
+                        <small>التاريخ</small>
+                        <strong>{{date}}</strong>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <span class="icon">⏰</span>
+                    <div>
+                        <small>الوقت</small>
+                        <strong>{{time}}</strong>
+                    </div>
+                </div>
+
+                <div class="detail-box">
+                    <span class="icon">📍</span>
+                    <div>
+                        <small>المكان</small>
+                        <strong>{{placeTitle}}</strong>
+                    </div>
+                </div>
+
+            </div>
+
+            <a href="{{locationUrl}}" target="_blank" class="location-btn">
+                عرض الموقع
+            </a>
+
+            <p class="closing">
+                {{closing}}
+            </p>
+
+            <div class="bottom-ornament">❦</div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

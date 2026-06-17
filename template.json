@@ -1,0 +1,127 @@
+{
+    "id": "royal-wedding",
+    "name": "دعوة زفاف ملكية",
+    "version": "1.0.0",
+    "html": "index.html",
+    "css": "style.css",
+    "fields": [
+        {
+            "options": [
+                {
+                    "value": "💍",
+                    "label": "💍"
+                },
+                {
+                    "label": "👑",
+                    "value": "👑"
+                },
+                {
+                    "value": "💐",
+                    "label": "💐"
+                },
+                {
+                    "label": "✨",
+                    "value": "✨"
+                }
+            ],
+            "defaultValue": "💍",
+            "label": "الأيقونة",
+            "type": "icon",
+            "required": true,
+            "key": "icon"
+        },
+        {
+            "key": "smallTitle",
+            "maxLength": 80,
+            "label": "النص العلوي",
+            "type": "text",
+            "required": true,
+            "defaultValue": "بكل الحب والسرور",
+            "minLength": 3
+        },
+        {
+            "required": true,
+            "type": "text",
+            "label": "عنوان الدعوة",
+            "minLength": 3,
+            "defaultValue": "دعوة زفاف",
+            "key": "title",
+            "maxLength": 60
+        },
+        {
+            "minLength": 10,
+            "defaultValue": "يشرفنا دعوتكم لحضور حفل زفاف",
+            "required": true,
+            "type": "textarea",
+            "label": "نص الدعوة",
+            "maxLength": 220,
+            "key": "message"
+        },
+        {
+            "hint": "أضف اسم العريس ثم اسم العروس.",
+            "separator": " & ",
+            "minItems": 2,
+            "key": "names",
+            "label": "أسماء العروسين",
+            "required": true,
+            "type": "names",
+            "maxItems": 2,
+            "placeholder": "مثال: محمد"
+        },
+        {
+            "key": "inviteText",
+            "maxLength": 180,
+            "type": "textarea",
+            "required": true,
+            "label": "نص إضافي",
+            "minLength": 5,
+            "defaultValue": "وبحضوركم تكتمل فرحتنا وتزدان ليلتنا"
+        },
+        {
+            "defaultValue": "الخميس 20 يونيو 2026",
+            "minLength": 3,
+            "label": "التاريخ",
+            "type": "text",
+            "required": true,
+            "placeholder": "مثال: الخميس 20 يونيو 2026",
+            "maxLength": 80,
+            "key": "date"
+        },
+        {
+            "key": "time",
+            "placeholder": "مثال: 09:00 مساءً",
+            "maxLength": 40,
+            "label": "الوقت",
+            "type": "text",
+            "required": true,
+            "defaultValue": "09:00 مساءً",
+            "minLength": 3
+        },
+        {
+            "key": "placeTitle",
+            "maxLength": 80,
+            "required": true,
+            "type": "text",
+            "label": "مكان الاحتفال",
+            "minLength": 3,
+            "defaultValue": "قاعة الاحتفال - الرياض"
+        },
+        {
+            "hint": "اضغط لاختيار الموقع من Google Map",
+            "label": "الموقع",
+            "required": true,
+            "type": "map",
+            "key": "location",
+            "placeholder": "اختر الموقع من الخريطة"
+        },
+        {
+            "minLength": 3,
+            "defaultValue": "حضوركم شرف لنا",
+            "required": true,
+            "type": "textarea",
+            "label": "رسالة الختام",
+            "maxLength": 120,
+            "key": "closing"
+        }
+    ]
+}
