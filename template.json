@@ -6,6 +6,23 @@
     "css": "style.css",
     "fields": [
         {
+            "key": "showIcon",
+            "label": "إظهار الأيقونة",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "options": [
                 {
                     "value": "💍",
@@ -27,7 +44,14 @@
             "defaultValue": "💍",
             "label": "الأيقونة",
             "type": "icon",
-            "required": true,
+            "requiredWhen": {
+                "field": "showIcon",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showIcon",
+                "equals": "yes"
+            },
             "key": "icon"
         },
         {
@@ -276,6 +300,13 @@
         }
     ],
     "sections": [
+        {
+            "key": "icon",
+            "visibleWhen": {
+                "field": "showIcon",
+                "equals": "yes"
+            }
+        },
         {
             "key": "smallTitle",
             "visibleWhen": {
