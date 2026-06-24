@@ -172,7 +172,7 @@
             "defaultValue": "الخميس 20 يونيو 2026",
             "minLength": 3,
             "label": "التاريخ",
-            "type": "text",
+            "type": "date",
             "requiredWhen": {
                 "field": "showDate",
                 "equals": "yes"
@@ -207,7 +207,7 @@
             "placeholder": "مثال: 09:00 مساءً",
             "maxLength": 40,
             "label": "الوقت",
-            "type": "text",
+            "type": "time",
             "requiredWhen": {
                 "field": "showTime",
                 "equals": "yes"
