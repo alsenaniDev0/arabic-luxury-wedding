@@ -45,6 +45,7 @@
             "defaultValue": "💍",
             "label": "الأيقونة",
             "type": "icon",
+            "selector": ".rings",
             "requiredWhen": {
                 "field": "showIcon",
                 "equals": "yes"
@@ -303,6 +304,7 @@
     "sections": [
         {
             "key": "icon",
+            "selector": ".rings",
             "visibleWhen": {
                 "field": "showIcon",
                 "equals": "yes"
