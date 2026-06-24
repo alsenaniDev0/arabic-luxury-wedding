@@ -9,6 +9,7 @@
             "key": "showIcon",
             "label": "إظهار الأيقونة",
             "type": "select",
+            "formTab": "design",
             "required": true,
             "defaultValue": "yes",
             "options": [
