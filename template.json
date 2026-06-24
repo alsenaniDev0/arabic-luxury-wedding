@@ -31,11 +31,35 @@
             "key": "icon"
         },
         {
+            "key": "showSmallTitle",
+            "label": "إظهار النص العلوي",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "key": "smallTitle",
             "maxLength": 80,
             "label": "النص العلوي",
             "type": "text",
-            "required": true,
+            "requiredWhen": {
+                "field": "showSmallTitle",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showSmallTitle",
+                "equals": "yes"
+            },
             "defaultValue": "بكل الحب والسرور",
             "minLength": 3
         },
@@ -69,23 +93,88 @@
             "placeholder": "مثال: محمد"
         },
         {
+            "key": "showInviteText",
+            "label": "إظهار النص الإضافي",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "key": "inviteText",
             "maxLength": 180,
             "type": "textarea",
-            "required": true,
+            "requiredWhen": {
+                "field": "showInviteText",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showInviteText",
+                "equals": "yes"
+            },
             "label": "نص إضافي",
             "minLength": 5,
             "defaultValue": "وبحضوركم تكتمل فرحتنا وتزدان ليلتنا"
+        },
+        {
+            "key": "showDate",
+            "label": "إظهار التاريخ",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
         },
         {
             "defaultValue": "الخميس 20 يونيو 2026",
             "minLength": 3,
             "label": "التاريخ",
             "type": "text",
-            "required": true,
+            "requiredWhen": {
+                "field": "showDate",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showDate",
+                "equals": "yes"
+            },
             "placeholder": "مثال: الخميس 20 يونيو 2026",
             "maxLength": 80,
             "key": "date"
+        },
+        {
+            "key": "showTime",
+            "label": "إظهار الوقت",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
         },
         {
             "key": "time",
@@ -93,14 +182,45 @@
             "maxLength": 40,
             "label": "الوقت",
             "type": "text",
-            "required": true,
+            "requiredWhen": {
+                "field": "showTime",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showTime",
+                "equals": "yes"
+            },
             "defaultValue": "09:00 مساءً",
             "minLength": 3
         },
         {
+            "key": "showLocation",
+            "label": "إظهار مكان الاحتفال والموقع",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "key": "placeTitle",
             "maxLength": 80,
-            "required": true,
+            "requiredWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            },
             "type": "text",
             "label": "مكان الاحتفال",
             "minLength": 3,
@@ -109,19 +229,101 @@
         {
             "hint": "اضغط لاختيار الموقع من Google Map",
             "label": "الموقع",
-            "required": true,
+            "requiredWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            },
             "type": "map",
             "key": "location",
             "placeholder": "اختر الموقع من الخريطة"
         },
         {
+            "key": "showClosing",
+            "label": "إظهار رسالة الختام",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "minLength": 3,
             "defaultValue": "حضوركم شرف لنا",
-            "required": true,
+            "requiredWhen": {
+                "field": "showClosing",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showClosing",
+                "equals": "yes"
+            },
             "type": "textarea",
             "label": "رسالة الختام",
             "maxLength": 120,
             "key": "closing"
+        }
+    ],
+    "sections": [
+        {
+            "key": "smallTitle",
+            "visibleWhen": {
+                "field": "showSmallTitle",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "inviteText",
+            "visibleWhen": {
+                "field": "showInviteText",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "date",
+            "visibleWhen": {
+                "field": "showDate",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "time",
+            "visibleWhen": {
+                "field": "showTime",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "place",
+            "visibleWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "locationButton",
+            "visibleWhen": {
+                "field": "showLocation",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "closing",
+            "visibleWhen": {
+                "field": "showClosing",
+                "equals": "yes"
+            }
         }
     ]
 }

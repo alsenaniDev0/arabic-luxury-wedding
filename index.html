@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{title}}</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -21,25 +21,25 @@
 
             <div class="rings">{{icon}}</div>
 
-            <p class="small-title">{{smallTitle}}</p>
+            <p class="small-title" data-section="smallTitle">{{smallTitle}}</p>
 
-            <h1 class="main-title">{{title}}</h1>
+            <h1 class="main-title" data-section="title">{{title}}</h1>
 
-            <p class="message">
+            <p class="message" data-section="message">
                 {{message}}
             </p>
 
-            <div class="names">
+            <div class="names" data-section="names">
                 {{names}}
             </div>
 
-            <p class="invite-text">
+            <p class="invite-text" data-section="inviteText">
                 {{inviteText}}
             </p>
 
-            <div class="details">
+            <div class="details" data-section="details">
 
-                <div class="detail-box">
+                <div class="detail-box" data-section="date">
                     <span class="icon">📅</span>
                     <div>
                         <small>التاريخ</small>
@@ -47,7 +47,7 @@
                     </div>
                 </div>
 
-                <div class="detail-box">
+                <div class="detail-box" data-section="time">
                     <span class="icon">⏰</span>
                     <div>
                         <small>الوقت</small>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-                <div class="detail-box">
+                <div class="detail-box" data-section="place">
                     <span class="icon">📍</span>
                     <div>
                         <small>المكان</small>
@@ -65,11 +65,11 @@
 
             </div>
 
-            <a href="{{locationUrl}}" target="_blank" class="location-btn">
+            <a href="{{locationUrl}}" target="_blank" rel="noopener" class="location-btn" data-section="locationButton">
                 عرض الموقع
             </a>
 
-            <p class="closing">
+            <p class="closing" data-section="closing">
                 {{closing}}
             </p>
 
